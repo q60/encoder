@@ -1,0 +1,40 @@
+language: android
+dist: trusty
+android:
+  components:
+    - tools
+    - platform-tools
+    - build-tools-28.0.3
+    - android-28
+    - add-on
+    - extra
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      - libstdc++6
+      - fonts-noto
+before_script:
+  - git clone https://github.com/flutter/flutter.git
+  - "./flutter/bin/flutter doctor"
+  - "export VER_RELEASE=v1.0.0"
+script:
+  - "./flutter/bin/flutter build apk"
+cache:
+  directories:
+    - "$HOME/.pub-cache"
+before_deploy:
+  - pushd build/app/outputs/apk/release
+  - mv ./app-release.apk ./Encoder.apk
+  - popd
+deploy:
+  provider: releases
+  token:
+    secure: eiv+eB1ztKlOmmJyUdur8Ht0yIvMkl1T9eTh76WDpODhuAzyJ/qgM/kloVGUW+arsgkWANrZ1cMN1CpHz2wTl7f56kOuO1R4fDx8xlgK+JMZOP8Vn4tNavptl51pxysBE1cqPW4g9/nEFKfBUI4qucIRXbaY9PjtPTTIthzY2PGWnWx4YB0D0aDe/+zj5xaV/m3opq67wpJj+aTJF6crC9qTWi3XS1pPkm+5tEKGiUMtIV5TY15px4anCrpjFJddI8bqJYmylZZ/iuKs1UVP4Qi7ogTDOjA0VaI8xKJxyPVhZoJ2CtNorpOvfrA2o6rsF+hoPoHhz0XBRrMRlnQcFkRHi7YqQ66ii0gtCFChfttmn95HuhsgU7kiUN+VXN+vTNg7+jsYf6VVaK+rpqbLfjTUe1vp8ZnSsdvX6x4aqSXjQX5FhUMoG2wtLQcYpJozbeeTHLCzF6E/b3PBco9eTv0Cn6Hkmx48Gs0bT6v205wpnT7efNe+fPd+1yWilJfnlMnOLrYJFQdNiX7AWvLamzjkeAC1tnDa/55i+DykgCEPw1Z+dcqw2DolURJmJCUB3bTqOYDQYZF4s0tvchsRjALAMj6AX5nnLA0zYib6XxCbo3qbQs6TeRqWKMYdVzQek6CIrHvcN7BDi90d5zJShgWwcE9oLo/P6gbYWb2GQUk=
+  file: build/app/outputs/apk/release/Encoder.apk
+  on:
+    repo: llathasa-veleth/encoder
+    tags: true
+  skip_cleanup: 'true'
+  name: "Release $($VER_RELEASE)"
