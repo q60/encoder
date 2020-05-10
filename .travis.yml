@@ -17,8 +17,7 @@ addons:
       - fonts-noto
 before_script:
   - git clone https://github.com/flutter/flutter.git
-  - "./flutter/bin/flutter doctor"
-  - "export VER_RELEASE=v1.0.0"
+ #- "./flutter/bin/flutter doctor"
 script:
   - "./flutter/bin/flutter build apk"
 cache:
@@ -35,6 +34,5 @@ deploy:
   file: build/app/outputs/apk/release/Encoder.apk
   on:
     repo: llathasa-veleth/encoder
-    tags: true
   skip_cleanup: 'true'
-  name: "Release $($VER_RELEASE)"
+  name: "Release v1.0.0"
