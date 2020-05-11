@@ -9,7 +9,7 @@ Encoder
   <a>&emsp;</a>
   <a><img alt="GitHub last commit (branch)" src="https://img.shields.io/github/last-commit/llathasa-veleth/encoder/master?style=for-the-badge"></a>
   <a>&emsp;</a>
-  <a href="https://github.com/llathasa-veleth/encoder/blob/master/LICENSE"><img alt="BSD-2 Clause" src="https://img.shields.io/github/license/llathasa-veleth/encoder?style=for-the-badge"></a>
+  <a href="https://github.com/llathasa-veleth/encoder/blob/master/LICENSE"><img alt="Eclipse Public License 2.0" src="https://img.shields.io/github/license/llathasa-veleth/encoder?style=for-the-badge"></a>
   <br/>
   <a href="https://github.com/llathasa-veleth/encoder/releases"><img alt="GitHub release (latest by date including pre-releases)" src="https://img.shields.io/github/v/release/llathasa-veleth/encoder?style=for-the-badge"></a>
 </p>
