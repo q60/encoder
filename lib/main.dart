@@ -9,7 +9,7 @@ class MainTheme {
   static const Color _colorTextMain       = Color(0xFFBFC7D5);
   static const Color _colorTextHeaderBack = Color(0xFF939EDE);
   static const Color _colorTextHeaderFore = Color(0xFF292D3E);
-  static const Color _colorIconColor      = Color(0xFFFF5370);
+  static const Color _colorIcon           = Color(0xFFFF5370);
   static const Color _colorDarkMain       = Color(0xFF292D3E);
 }
 
@@ -167,7 +167,7 @@ class _DefaultFormState extends State<DefaultForm> {
                 suffixIcon: IconButton(
                   icon: Icon(
                     Icons.backspace,
-                    color: MainTheme._colorIconColor,
+                    color: MainTheme._colorIcon,
                   ),
                   onPressed:
                     () {
@@ -239,7 +239,7 @@ class _DefaultFormState extends State<DefaultForm> {
                 ),
                 icon: Icon(
                   Icons.subdirectory_arrow_left,
-                  color: MainTheme._colorIconColor,
+                  color: MainTheme._colorIcon,
                 ),
                 items: <String>[
                   'Choose method',
@@ -339,7 +339,7 @@ class _DefaultFormState extends State<DefaultForm> {
                 suffixIcon: IconButton(
                   icon: Icon(
                       Icons.backspace,
-                      color: MainTheme._colorIconColor,
+                      color: MainTheme._colorIcon,
                   ),
                   onPressed:
                     () {
